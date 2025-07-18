@@ -1,103 +1,115 @@
+// app/page.js or pages/index.js
+"use client";
+import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
+import { useEffect } from "react";
+import NavSection from "@/components/NavSection";
+import AboutSection from "@/components/AboutSection";
+import SkillsSection from "@/components/SkillsSection";
+import EducationSection from "@/components/EducationSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import Typewriter from "typewriter-effect";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  useEffect(() => {
+    const localScript = document.createElement("script");
+    localScript.src = "/script.js";
+    localScript.async = true;
+    document.body.appendChild(localScript);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    return () => {
+      document.body.removeChild(localScript);
+    };
+  }, []);
+
+  return (
+    <>
+      <NavSection />
+
+      <main>
+        {/* Hero Section */}
+        <div id="home" className="ui">
+          <div id="tr">
+            {" "}
+            <Typewriter
+              options={{
+                strings: [
+                  "Full Stack Developer",
+                  "Web Developer",
+                  "Software Engineer",
+                ],
+                autoStart: true,
+                loop: true,
+                delay: 40, // ↓ Lower value = faster typing
+                deleteSpeed: 20, // Optional: control delete speed too
+              }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="container flex justify-around items-center">
+            <div className="flex flex-col gap-6 items-center">
+              <a href="#about">
+                <div className="bg-blue-700 h-10 w-32 rounded-2xl flex items-center justify-center text-white">
+                  <span>About Me</span>
+                  <IoIosArrowDown size={18} />
+                </div>
+              </a>
+
+              {/* Social Links */}
+              <div className="social flex gap-2 md:gap-4">
+                {[
+                  [
+                    "linkedin",
+                    "https://www.linkedin.com/in/pritam-mehta-851405262",
+                  ],
+                  ["github", "https://github.com/pritammehta01"],
+                  ["twitter", "#"],
+                  ["telegram", "#"],
+                  ["instagram", "#"],
+                ].map(([platform, url]) => (
+                  <a
+                    href={url}
+                    key={platform}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="w-10 h-10 group relative">
+                      <Image
+                        src={`/images/${platform}.png`}
+                        alt={platform}
+                        width={40}
+                        height={40}
+                      />
+                      <span className="absolute left-0 top-full mt-1 hidden text-sm font-semibold text-black group-hover:block">
+                        {platform.charAt(0).toUpperCase() + platform.slice(1)}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="image bg relative w-24 h-24 md:w-72 md:h-72 rounded-full md:p-2">
+              <Image
+                className="object-fit tilt bg-sky-400 rounded-full"
+                src="/prof-removebg-preview.png"
+                alt="Pritam Profile"
+                fill={true}
+                // width={288}
+                // height={288}
+                draggable={false}
+              />
+            </div>
+          </div>
         </div>
+
+        <div className="h-[2px] bg-gray-500"></div>
+        <AboutSection />
+        <SkillsSection />
+        <EducationSection />
+        <ContactSection />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
 }
