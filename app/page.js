@@ -7,6 +7,7 @@ import NavSection from "@/components/NavSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import EducationSection from "@/components/EducationSection";
+import ProjectSection from "@/components/ProjectSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Typewriter from "typewriter-effect";
@@ -107,6 +108,7 @@ export default function Home() {
         <AboutSection />
         <SkillsSection />
         <EducationSection />
+        <ProjectSection/>
         <ContactSection />
       </main>
       <Footer />

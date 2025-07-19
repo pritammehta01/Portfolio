@@ -46,6 +46,12 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.logo {
+  font-weight: bold;
+  background: linear-gradient(to right, blue, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* Blinking cursor */
 #tr .Typewriter__cursor {
   display: inline-block;
@@ -68,13 +74,29 @@ nav {
   width: 40;
   height: 40;
 }
+.heartbeat {
+  animation: pulse 1s ease-in-out infinite;
+  margin: 0 0.25rem; /* similar to mx-1 */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+}
+
 .social button:hover {
   /* transition: all; */
   scale: 1.1;
 }
 
 .skills {
-  /* background-image: url(src/skillsbg.png); */
+  background: linear-gradient(to right, blue, purple);
+}
+.projects {
   background: linear-gradient(to right, blue, purple);
 }
 @media screen and (max-width: 525px) {

@@ -66,11 +66,11 @@ const Footer = () => {
         <div className="flex items-center">
           <span>Designed With </span>
           <Image
-            width={16}
-            height={16}
+            width={28}
+            height={28}
             src="/images/favorite.png"
             alt="heart"
-            className="mx-1"
+            className="heartbeat"
           />
           <span>By&nbsp;</span>
           <span className="text-[orange]">Pritam Mehta</span>

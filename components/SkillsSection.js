@@ -37,8 +37,8 @@ export default function SkillsSection() {
         className="text-4xl text-white flex gap-3 font-bold"
       >
         <Image
-          className="h-10 w-10"
-          src="/images/programming.png"
+          className="h-10 w-10 invert"
+          src="/images/critical-thinking.png"
           alt="Programming Icon"
           width={40}
           height={40}

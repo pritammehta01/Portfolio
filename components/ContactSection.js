@@ -1,14 +1,51 @@
-'use client';
+"use client";
 
-import { IoPersonSharp } from 'react-icons/io5';
-import { FaPhone } from 'react-icons/fa6';
-import { IoMdChatbubbles } from 'react-icons/io';
-import { MdEmail } from 'react-icons/md';
-import Image from 'next/image';
-import React from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { IoPersonSharp } from "react-icons/io5";
+import { FaPhone } from "react-icons/fa6";
+import { IoMdChatbubbles } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error(await res.text());
+
+      setStatus("Message sent successfully!");
+    } catch (err) {
+      console.error(err);
+      setStatus("Failed to send message");
+    } finally {
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    }
+  };
   return (
     <motion.section
       id="contact"
@@ -39,7 +76,6 @@ const ContactSection = () => {
         transition={{ duration: 0.6 }}
         className="rounded-lg relative bg-white flex flex-col md:flex-row md:justify-around md:gap-10 w-[95%]"
       >
-        {/* Image with vertical motion */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -49,7 +85,7 @@ const ContactSection = () => {
             <Image
               src="/graduate/contactme.png"
               alt="contact illustration"
-              fill={true}
+              fill
               className="rounded-lg object-contain"
               sizes="(min-width: 1024px) 33vw, (min-width: 768px) 14rem, 100vw"
               priority
@@ -57,46 +93,53 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
-        {/* Form with vertical motion */}
         <motion.div
           className="p-4 flex flex-col gap-4 w-full"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7 }}
         >
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="flex flex-col gap-4"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="p-1 bg-[#e3eafd] group focus-within:border-[purple] border-2 rounded-sm items-center flex gap-2">
-              <IoPersonSharp className="group-focus-within:text-[purple]" />
+              <IoPersonSharp />
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="outline-none bg-transparent w-full"
                 placeholder="Name"
-                type="text"
                 required
               />
             </div>
             <div className="p-1 bg-[#e3eafd] group focus-within:border-[purple] border-2 rounded-sm items-center flex gap-2">
-              <MdEmail className="group-focus-within:text-[purple]" />
+              <MdEmail />
               <input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
                 className="outline-none bg-transparent w-full"
                 placeholder="Email"
-                type="email"
                 required
               />
             </div>
             <div className="p-1 bg-[#e3eafd] group focus-within:border-[purple] border-2 rounded-sm items-center flex gap-2">
-              <FaPhone className="group-focus-within:text-[purple]" />
+              <FaPhone />
               <input
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
                 className="outline-none bg-transparent w-full"
                 placeholder="Phone"
-                type="number"
               />
             </div>
             <div className="p-1 bg-[#e3eafd] group focus-within:border-[purple] border-2 rounded-sm flex items-start gap-2">
-              <IoMdChatbubbles className="group-focus-within:text-[purple]" />
+              <IoMdChatbubbles />
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 className="outline-none bg-transparent resize-none w-full h-24"
                 placeholder="Message"
                 required
@@ -116,10 +159,12 @@ const ContactSection = () => {
                 alt="send"
               />
             </motion.button>
+            <p className="text-sm text-gray-700 mt-1">{status}</p>
           </form>
         </motion.div>
       </motion.div>
     </motion.section>
   );
 };
+
 export default ContactSection;

@@ -7,8 +7,9 @@ import { useEffect } from 'react';
 const navItems = [
   { label: 'Home', icon: '/images/home.png', href: '#home' },
   { label: 'About', icon: '/images/user.png', href: '#about' },
-  { label: 'Skills', icon: '/images/programming.png', href: '#skills' },
+  { label: 'Skills', icon: '/images/critical-thinking.png', href: '#skills' },
   { label: 'Education', icon: '/graduate/graduation-hat.png', href: '#education' },
+  { label: 'Project', icon: '/images/programming.png', href: '#projects' },
   { label: 'Contact', icon: '/graduate/customer-support.png', href: '#contact' }
 ];
 
@@ -42,8 +43,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white h-16 flex items-center justify-between px-6 sticky top-0 z-50 shadow">
       <Link href="/" className="flex items-center gap-2">
-        <Image src="/portfolio.png" alt="Logo" width={40} height={40} />
-        <span className="font-bold text-xl text-blue-600">Pritam</span>
+        <span className="logo text-xl">Pritam</span>
       </Link>
 
       <ul className="flex gap-5 md:gap-10 items-center font-bold text-gray-800">
