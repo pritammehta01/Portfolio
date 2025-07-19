@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { IoPersonSharp } from "react-icons/io5";
-import { FaPhone } from "react-icons/fa6";
-import { IoMdChatbubbles } from "react-icons/io";
-import { MdEmail } from "react-icons/md";
-import Image from "next/image";
-import React from "react";
-import { motion } from "framer-motion";
+import { IoPersonSharp } from 'react-icons/io5';
+import { FaPhone } from 'react-icons/fa6';
+import { IoMdChatbubbles } from 'react-icons/io';
+import { MdEmail } from 'react-icons/md';
+import Image from 'next/image';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
   return (
@@ -39,9 +39,10 @@ const ContactSection = () => {
         transition={{ duration: 0.6 }}
         className="rounded-lg relative bg-white flex flex-col md:flex-row md:justify-around md:gap-10 w-[95%]"
       >
+        {/* Image with vertical motion */}
         <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7 }}
         >
           <div className="relative w-full md:w-56 md:h-56 lg:w-full lg:h-full aspect-[4/3]">
@@ -56,10 +57,11 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
+        {/* Form with vertical motion */}
         <motion.div
           className="p-4 flex flex-col gap-4 w-full"
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.7 }}
         >
           <form
@@ -120,5 +122,4 @@ const ContactSection = () => {
     </motion.section>
   );
 };
-
 export default ContactSection;

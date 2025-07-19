@@ -60,10 +60,9 @@ export default function SkillsSection() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+              transition={{ duration: 0.1, delay: index * 0.05 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.1 }}
-              className="bg-slate-900 text-white w-24 md:w-41 gap-1 md:gap-2 h-20 md:h-28 flex flex-col justify-center items-center rounded-xl"
+              className="bg-slate-900 text-white w-24 md:w-41 gap-1 md:gap-2 h-20 hover:scale-105 md:h-28 flex flex-col justify-center items-center rounded-xl"
             >
               <Image
                 src={skill.src}

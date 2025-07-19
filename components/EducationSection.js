@@ -37,8 +37,8 @@ export default function EducationSection() {
       </motion.p>
 
       <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
         className="rounded-lg bg-white flex flex-col sm:flex-row w-[95%] md:w-auto"
       >
@@ -61,9 +61,9 @@ export default function EducationSection() {
       </motion.div>
 
       <motion.div
-        initial={{ x: 100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
         className="rounded-lg bg-white flex flex-col sm:flex-row w-[95%] md:w-[70%]"
       >
         <Image

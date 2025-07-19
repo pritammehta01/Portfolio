@@ -32,14 +32,15 @@ export default function AboutSection() {
       </motion.div>
 
       <div className="info container flex flex-col md:flex-row items-center justify-center gap-3 md:gap-24">
+        {/* Image animation changed to vertical */}
         <motion.div
-          initial={{ rotateY: 90, opacity: 0 }}
-          whileInView={{ rotateY: 0, opacity: 1 }}
+          initial={{ y: 60, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           className="image w-80 box-border h-fit"
         >
           <Image
-            className="tilt w-full h-fit object-cover rounded-2xl"
+            className="tilt w-full h-fit object-cover rounded-2xl grayscale-80 hover:grayscale-0"
             src="/images/info.jpg"
             alt="About Info"
             width={320}
@@ -49,9 +50,10 @@ export default function AboutSection() {
           />
         </motion.div>
 
+        {/* Text content animation changed to vertical */}
         <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ y: 60, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-[80%] md:w-1/3 h-fit"
         >
