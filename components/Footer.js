@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t flex justify-around items-center pt-4 border-gray-700 text-center text-gray-400 text-sm">
+      <div className="border-t flex flex-col justify-center items-center pt-4 border-gray-700 text-center text-gray-400 text-sm">
         <div className="flex items-center">
           <span>Designed With </span>
           <Image

@@ -36,11 +36,13 @@ const ContactSection = () => {
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) throw new Error(await res.text());
+      const result = await res.text();
+
+      if (!res.ok) throw new Error(result);
 
       setStatus("Message sent successfully!");
     } catch (err) {
-      console.error(err);
+      console.error("Error while sending message:", err.message || err);
       setStatus("Failed to send message");
     } finally {
       setFormData({ name: "", email: "", phone: "", message: "" });

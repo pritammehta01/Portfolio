@@ -128,7 +128,7 @@ export default function ProjectSection() {
       <Header title="Projects" icon="/images/programming.png" />
 
       {/* Projects Grid */}
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid px-3 gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (
           <motion.div
             key={project.id}
@@ -140,7 +140,7 @@ export default function ProjectSection() {
             className="group relative  bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-500 hover:scale-105"
           >
             {/* Project Card */}
-            <div className="p-6 pb-4">
+            <div className="p-3 pb-4">
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   {project.title.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
