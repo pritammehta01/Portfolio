@@ -41,7 +41,7 @@ export default function AboutSection() {
           <Image
             className="tilt w-full h-fit object-cover rounded-2xl grayscale-80 hover:grayscale-0"
             src="/images/info.jpg"
-            alt="About Info"
+            alt="Pritam Mehta"
             width={320}
             height={320}
             style={{ boxShadow: '0 0 20px rgba(5, 11, 11, 0.6)' }}
@@ -60,22 +60,24 @@ export default function AboutSection() {
             DevOps Engineer | CI/CD | Docker | Kubernetes | Nginx | Linux | GCP
           </p>
           
-          <div className="leading-relaxed space-y-4">
+          <div className="leading-relaxed space-y-4 text-justify">
             <p>
               I am a <strong>DevOps Engineer</strong> with hands-on experience in designing, 
               deploying, and managing production systems using <strong>Docker, Docker Compose, 
-              Jenkins CI/CD pipelines, Kubernetes, Nginx reverse proxy, and Linux</strong>.
+              Jenkins CI/CD pipelines, Kubernetes, Nginx reverse proxy, and Linux</strong>. 
+              I have a proven ability to manage live applications on cloud instances and automate build 
+              and deployment workflows
             </p>
             <p>
               Currently, I am working as a <strong>DevOps Intern at Amnex Infotechnologies</strong>, 
-              where I have gained real-world exposure to infrastructure automation and production operations. 
-              I have a proven ability to manage live applications on cloud instances and automate build 
-              and deployment workflows.
+              where I gain real-world exposure to infrastructure automation and production operations.
             </p>
+            
             <p>
-              I hold a <strong>B.Tech in Computer Science Engineering</strong> from 
-              Ramchandra Chandravanshi Institute Of Technology (RCIT) and a 
-              Diploma in Electrical Engineering from Garhwa Polytechnic.
+              I am a <strong>B Tech In Computer Science Engineering graduate</strong> from 
+              <strong> Ramchandra Chandravanshi Institute Of Technology (RCIT)</strong> (08/2021 - 08/2025)
+              Additionally, I am a <strong>Diploma In Electrical Engineering graduate</strong> from 
+              <strong> Garhwa Plytechnic</strong> (06/2017 - 08/2020)
             </p>
           </div>
 
