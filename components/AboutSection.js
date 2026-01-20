@@ -32,7 +32,6 @@ export default function AboutSection() {
       </motion.div>
 
       <div className="info container flex flex-col md:flex-row items-center justify-center gap-3 md:gap-24">
-        {/* Image animation changed to vertical */}
         <motion.div
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -50,29 +49,36 @@ export default function AboutSection() {
           />
         </motion.div>
 
-        {/* Text content animation changed to vertical */}
         <motion.div
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-[80%] md:w-1/3 h-fit"
+          className="w-[80%] md:w-1/2 h-fit"
         >
-          <p className="font-bold text-3xl">I&apos;m Pritam</p>
-          <p className="font-semibold pb-2">Full Stack Developer</p>
-          <p>
-            I am a Full-Stack developer based in Jharkhand, India. I am a Computer Science Engineering
-            undergraduate from RCIT. I am very passionate about improving my coding skills & developing
-            applications & websites. I build X Clone and Websites using MERN Stack. Working for myself
-            to improve my skills. Love to build Full-Stack clones.
+          <p className="font-bold text-3xl">I&apos;m Pritam Mehta</p>
+          {/* Updated Title */}
+          <p className="font-semibold pb-2 text-purple-600 text-xl">DevOps Engineer</p>
+          
+          {/* Updated Bio focusing on DevOps experience */}
+          <p className="leading-relaxed">
+            I am a dedicated **DevOps Engineer** based in Jharkhand, India[cite: 3]. Currently, I am 
+            working as a **DevOps Intern at Amnex Infotechnologies**, where I gain 
+            hands-on exposure to infrastructure automation and production operations.
+          </p>
+          <p className="pt-2 leading-relaxed">
+            With a B.Tech in Computer Science Engineering from RCIT, I specialize in 
+            designing and managing production systems using **Docker, Kubernetes, Jenkins, and Nginx**[cite: 6]. 
+            I am passionate about automating build and deployment workflows [cite: 7] and managing 
+            live applications on **GCP and Linux cloud infrastructure**[cite: 7, 21, 31].
           </p>
 
-          <div className="email py-2">
-            <span className="text-[blue]">Email</span>&nbsp;:
+          <div className="email pt-4 pb-1">
+            <span className="text-[blue] font-semibold">Email</span>&nbsp;:
             <span> pritammehta04@gmail.com</span>
           </div>
 
-          <div className="add">
-            <span className="text-[blue]">Place</span>&nbsp;:
+          <div className="add pb-4">
+            <span className="text-[blue] font-semibold">Place</span>&nbsp;:
             <span> Jharkhand, India - 822114</span>
           </div>
 
@@ -80,11 +86,10 @@ export default function AboutSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            className="lg:pt-10 md:pt-4"
           >
-            <Link href="/Pritam-Mehta-Resume.pdf" download>
-              <div className="bg-blue-700 h-10 w-32 rounded-lg flex gap-1 items-center justify-center text-white">
-                <span>Resume</span>
+            <Link href="/Pritam-Mehta-Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <div className="bg-blue-700 h-10 w-36 rounded-lg flex gap-2 items-center justify-center text-white shadow-lg hover:bg-blue-800 transition-colors">
+                <span>View Resume</span>
                 <IoIosArrowDown size={16} />
               </div>
             </Link>
