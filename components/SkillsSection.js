@@ -3,20 +3,26 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+// Skills updated to match DevOps Engineer Resume profile
 const skills = [
-  { name: 'React Js', src: '/skills/atom.png', className: '' },
-  { name: 'ExpressJS', src: '/skills/nodejs.png', className: '' },
+  // DevOps & Cloud (Priority)
+  { name: 'Docker', src: '/skills/docker.png', className: '' }, // [cite: 16]
+  { name: 'Kubernetes', src: '/skills/kubernetes.png', className: '' }, // [cite: 18]
+  { name: 'Jenkins', src: '/skills/jenkins.png', className: '' }, // [cite: 17]
+  { name: 'Nginx', src: '/skills/nginx.png', className: '' }, // [cite: 19]
+  { name: 'GCP', src: '/skills/gcp.png', className: '' }, // [cite: 21]
+  { name: 'Linux', src: '/skills/linux.png', className: '' }, // [cite: 20]
+  
+  // Version Control
+  { name: 'Git', src: '/skills/social.png', className: '' }, // 
+  { name: 'GitHub', src: '/skills/github.png', className: 'invert' }, // [cite: 24]
+
+  // Development Stack
   { name: 'NodeJs', src: '/skills/nod.png', className: 'w-16 h-16' },
+  { name: 'React Js', src: '/skills/atom.png', className: '' },
   { name: 'Next JS', src: '/skills/nextjs.png', className: 'w-16 h-16' },
-  { name: 'TailwindCSS', src: '/skills/tailwindcss.png', className: '' },
-  { name: 'Bootstrap', src: '/skills/bootstrap.png', className: '' },
-  { name: 'HTML', src: '/skills/html-5.png', className: '' },
-  { name: 'CSS3', src: '/skills/text.png', className: 'invert' },
   { name: 'JavaScript', src: '/skills/js.png', className: '' },
-  { name: 'Java', src: '/skills/java.png', className: '' },
   { name: 'MongoDB', src: '/skills/leaf.png', className: '' },
-  { name: 'Git VCS', src: '/skills/social.png', className: '' },
-  { name: 'GitHub', src: '/skills/github.png', className: 'invert' },
 ];
 
 export default function SkillsSection() {
@@ -52,7 +58,7 @@ export default function SkillsSection() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
-        className="bg-[#161668d8] w-auto md:w-[80%] h-auto rounded-xl p-3"
+        className="bg-[#161668d8] w-auto md:w-[80%] h-auto rounded-xl p-6 shadow-2xl"
       >
         <div className="flex gap-4 flex-wrap justify-center">
           {skills.map((skill, index) => (
@@ -62,16 +68,18 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.1, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-slate-900 text-white w-24 md:w-41 gap-1 md:gap-2 h-20 hover:scale-105 md:h-28 flex flex-col justify-center items-center rounded-xl"
+              className="bg-slate-900 text-white w-24 md:w-40 gap-1 md:gap-2 h-24 hover:scale-110 md:h-32 flex flex-col justify-center items-center rounded-xl transition-transform border border-slate-800"
             >
-              <Image
-                src={skill.src}
-                alt={skill.name}
-                width={40}
-                height={40}
-                className={`w-10 h-10 ${skill.className}`}
-              />
-              <p>{skill.name}</p>
+              <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                <Image
+                  src={skill.src}
+                  alt={skill.name}
+                  width={48}
+                  height={48}
+                  className={`object-contain ${skill.className}`}
+                />
+              </div>
+              <p className="text-xs md:text-sm font-medium text-center px-1">{skill.name}</p>
             </motion.div>
           ))}
         </div>

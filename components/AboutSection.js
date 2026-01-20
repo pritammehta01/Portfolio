@@ -56,29 +56,36 @@ export default function AboutSection() {
           className="w-[80%] md:w-1/2 h-fit"
         >
           <p className="font-bold text-3xl">I&apos;m Pritam Mehta</p>
-          {/* Updated Title */}
-          <p className="font-semibold pb-2 text-purple-600 text-xl">DevOps Engineer</p>
+          <p className="font-semibold pb-2 text-purple-600 text-xl">
+            DevOps Engineer | CI/CD | Docker | Kubernetes | Nginx | Linux | GCP
+          </p>
           
-          {/* Updated Bio focusing on DevOps experience */}
-          <p className="leading-relaxed">
-            I am a dedicated **DevOps Engineer** based in Jharkhand, India[cite: 3]. Currently, I am 
-            working as a **DevOps Intern at Amnex Infotechnologies**, where I gain 
-            hands-on exposure to infrastructure automation and production operations.
-          </p>
-          <p className="pt-2 leading-relaxed">
-            With a B.Tech in Computer Science Engineering from RCIT, I specialize in 
-            designing and managing production systems using **Docker, Kubernetes, Jenkins, and Nginx**[cite: 6]. 
-            I am passionate about automating build and deployment workflows [cite: 7] and managing 
-            live applications on **GCP and Linux cloud infrastructure**[cite: 7, 21, 31].
-          </p>
+          <div className="leading-relaxed space-y-4">
+            <p>
+              I am a <strong>DevOps Engineer</strong> with hands-on experience in designing, 
+              deploying, and managing production systems using <strong>Docker, Docker Compose, 
+              Jenkins CI/CD pipelines, Kubernetes, Nginx reverse proxy, and Linux</strong>.
+            </p>
+            <p>
+              Currently, I am working as a <strong>DevOps Intern at Amnex Infotechnologies</strong>, 
+              where I have gained real-world exposure to infrastructure automation and production operations. 
+              I have a proven ability to manage live applications on cloud instances and automate build 
+              and deployment workflows.
+            </p>
+            <p>
+              I hold a <strong>B.Tech in Computer Science Engineering</strong> from 
+              Ramchandra Chandravanshi Institute Of Technology (RCIT) and a 
+              Diploma in Electrical Engineering from Garhwa Polytechnic.
+            </p>
+          </div>
 
-          <div className="email pt-4 pb-1">
-            <span className="text-[blue] font-semibold">Email</span>&nbsp;:
+          <div className="email pt-6 pb-1">
+            <span className="text-blue-600 font-bold">Email</span>&nbsp;:
             <span> pritammehta04@gmail.com</span>
           </div>
 
-          <div className="add pb-4">
-            <span className="text-[blue] font-semibold">Place</span>&nbsp;:
+          <div className="add pb-6">
+            <span className="text-blue-600 font-bold">Place</span>&nbsp;:
             <span> Jharkhand, India - 822114</span>
           </div>
 
@@ -88,7 +95,7 @@ export default function AboutSection() {
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <Link href="/Pritam-Mehta-Resume.pdf" target="_blank" rel="noopener noreferrer">
-              <div className="bg-blue-700 h-10 w-36 rounded-lg flex gap-2 items-center justify-center text-white shadow-lg hover:bg-blue-800 transition-colors">
+              <div className="bg-blue-700 h-10 w-40 rounded-lg flex gap-2 items-center justify-center text-white shadow-lg hover:bg-blue-800 transition-colors">
                 <span>View Resume</span>
                 <IoIosArrowDown size={16} />
               </div>

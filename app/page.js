@@ -36,14 +36,15 @@ export default function Home() {
             <Typewriter
               options={{
                 strings: [
-                  "Full Stack Developer",
-                  "Web Developer",
-                  "Software Engineer",
+                  "DevOps Engineer",
+                  "CI/CD Specialist",
+                  "Cloud Infrastructure",
+                  "Automation Engineer",
                 ],
                 autoStart: true,
                 loop: true,
-                delay: 40, // ↓ Lower value = faster typing
-                deleteSpeed: 20, // Optional: control delete speed too
+                delay: 40,
+                deleteSpeed: 20,
               }}
             />
           </div>
